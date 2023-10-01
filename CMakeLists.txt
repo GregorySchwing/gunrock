@@ -43,7 +43,9 @@ endif()
 # begin /* Include Boost, OpenMP & Metis */
 #include(${CMAKE_SOURCE_DIR}/cmake/FindBoostHeaders.cmake)
 #include(${CMAKE_SOURCE_DIR}/cmake/FindBoost.cmake)
-
+set(BOOST_ROOT "/usr")  # Set the Boost root directory
+set(Boost_INCLUDE_DIR "/usr/include/boost")  # Set the Boost include directory
+find_package(Boost REQUIRED COMPONENTS system filesystem timer chrono)
 #if(${CUDA_VERSION} EQUAL "8.0" AND ${Boost_VERSION} EQUAL "106400")
 #  message(FATAL_ERROR "Boost 1.64 is not compatible with CUDA 8.0 due to a bug in CUDA, this is resolved in CUDA 9. Please either use Boost 1.58 or upgrade CUDA to 9.0.")
 #endif()
